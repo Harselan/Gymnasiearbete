@@ -37,6 +37,28 @@ class Pandascore extends Model
         return $result;
     }
 
+    public static function getMatches( $category = '0' )
+    {
+        if( $category == '0' )
+        {
+            $result = [
+                'upcoming' => json_decode( file_get_contents( 'https://api.pandascore.co/matches/upcoming?token=' . env('PS_KEY') ) ),
+                'running'  => json_decode( file_get_contents( 'https://api.pandascore.co/matches/running?token=' . env('PS_KEY') ) ),
+                'past'     => json_decode( file_get_contents( 'https://api.pandascore.co/matches/past?token=' . env('PS_KEY') ) )
+            ];
+        }
+        else
+        {
+            $result = [
+                'upcoming' => json_decode( file_get_contents( 'https://api.pandascore.co/' . $category . '/matches/upcoming?token=' . env('PS_KEY') ) ),
+                'running'  => json_decode( file_get_contents( 'https://api.pandascore.co/' . $category . '/matches/running?token=' . env('PS_KEY') ) ),
+                'past'     => json_decode( file_get_contents( 'https://api.pandascore.co/' . $category . '/matches/past?token=' . env('PS_KEY') ) )
+            ];
+        }
+
+        return $result;
+    }
+
     public static function getData( $category = '0', $type )
     {
         return self::gets( $category, $type );

@@ -14,3 +14,19 @@
     opacity: 0.9;
     padding:4px;
 }
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.noborder, .noborder th, .noborder td{
+    border:0px !important;
+}
+.wrapper {
+    overflow: hidden;
+}
+.first {
+    float:left;
+}
+.second {
+    overflow: hidden;
+}

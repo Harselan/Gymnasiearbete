@@ -14,6 +14,6 @@ class DashboardController extends Controller
             return view( 'dashboard.app', [ 'category' => 'home' ] );
         }
 
-        return view( 'categories.app', [ 'category' => $category, 'types' => Pandascore::getTypes( $category ) ] );
+        return view( 'categories.app', [ 'category' => $category, 'types' => Pandascore::getTypes( $category ), 'matches' => Pandascore::getMatches( $category ) ] );
     }
 }
