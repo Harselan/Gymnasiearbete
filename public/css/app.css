@@ -1,0 +1,16 @@
+.start_img{
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.hero-image{
+    width:100%;
+    max-height: 90vh;
+}
+.carousel-caption{
+    background:black;
+    opacity: 0.9;
+    padding:4px;
+}
