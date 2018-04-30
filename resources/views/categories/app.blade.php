@@ -96,6 +96,6 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-md table-responsive" id="dataResult"></div>
+        <div class="col-md table-responsive  text-center" id="dataResult"></div>
     </div>
 @endsection

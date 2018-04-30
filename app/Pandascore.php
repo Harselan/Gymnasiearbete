@@ -48,6 +48,11 @@ class Pandascore extends Model
         return $result;
     }
 
+    public static function getMap( $id )
+    {
+        return json_decode( file_get_contents( 'https://api.pandascore.co/ow/maps/' . $id . '?token=' . env('PS_KEY') ) );
+    }
+
     public static function getMatches( $type, $category = '0' )
     {
         if( $type == 'tournament' )

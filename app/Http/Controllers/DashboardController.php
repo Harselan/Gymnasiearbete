@@ -22,6 +22,11 @@ class DashboardController extends Controller
         return view( 'categories.app', [ 'category' => $category, 'types' => Pandascore::getTypes( $category ), 'matches' => Pandascore::getMatches( '', $category ) ] );
     }
 
+    public function getMap( $map_id )
+    {
+        return view( 'categories.map', [ 'category' => 'ow', 'map' => Pandascore::getMap( $map_id ) ] );
+    }
+
     public function getMatches( $tournament_slug )
     {
         return view( 'tournaments.show', ['category' => 'tournaments', 'tournament' => $tournament_slug,  'matches' => Pandascore::getMatches( 'tournament', $tournament_slug ) ] );

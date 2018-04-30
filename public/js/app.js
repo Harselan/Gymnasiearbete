@@ -74,7 +74,7 @@ function dataTable( type, data )
 
         data.forEach( function( index )
         {
-            result += '<tr><td><img src="' + index.image_url + '"/></td><td>' + index.name + '</td><td>' + index.gold_total + '</td><td>' + index.gold_sell + '</td></tr>';
+            result += '<tr><td><img src="' + index.image_url + '"/></td><td>' + index.name + '</td><td>' + index.gold_total + ' g</td><td>' + index.gold_sell + ' g</td></tr>';
         } );
 
         result += '</table>';
@@ -131,7 +131,7 @@ function dataTable( type, data )
 
         data.forEach( function( index )
         {
-            result += '<tr><td>' + index.name + '</td><td>' + index.game_mode + '</td><td><a class="btn btn-primary btm-block" href="/ow/map/' + index.id + '">Läs mer</a></td></tr>';
+            result += '<tr><td>' + index.name + '</td><td>' + index.game_mode + '</td><td><a class="btn btn-primary btm-block" href="/ow/map/' + index.id + '">Se bild</a></td></tr>';
         } );
 
         result += '</table>';
