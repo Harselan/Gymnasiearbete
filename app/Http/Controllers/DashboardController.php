@@ -11,9 +11,19 @@ class DashboardController extends Controller
     {
         if( $category == '0' )
         {
-            return view( 'dashboard.app', [ 'category' => 'home' ] );
+            return view( 'layouts.app', [ 'category' => 'home' ] );
         }
 
-        return view( 'categories.app', [ 'category' => $category, 'types' => Pandascore::getTypes( $category ), 'matches' => Pandascore::getMatches( $category ) ] );
+        if( $category == 'tournaments' )
+        {
+            return view( 'tournaments.app', [ 'tournaments' => Pandascore::getTournaments(), 'category' => $category ] );
+        }
+
+        return view( 'categories.app', [ 'category' => $category, 'types' => Pandascore::getTypes( $category ), 'matches' => Pandascore::getMatches( '', $category ) ] );
+    }
+
+    public function getMatches( $tournament_slug )
+    {
+        return view( 'tournaments.show', ['category' => 'tournaments', 'tournament' => $tournament_slug,  'matches' => Pandascore::getMatches( 'tournament', $tournament_slug ) ] );
     }
 }

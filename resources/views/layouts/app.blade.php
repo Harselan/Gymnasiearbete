@@ -20,10 +20,17 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Game library</a>
 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" id="home">
                     <a class="nav-link" href="/">Hem</a>
+                </li>
+                <li class="nav-item" id="tournaments">
+                    <a class="nav-link" href="/tournaments">Turneringar</a>
                 </li>
                 <li class="nav-item" id="lol">
                     <a class="nav-link" href="/lol">League Of Legends</a>

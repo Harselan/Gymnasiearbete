@@ -37,8 +37,30 @@ class Pandascore extends Model
         return $result;
     }
 
-    public static function getMatches( $category = '0' )
+    public static function getTournaments()
     {
+        $result = [
+            'lol'       => json_decode( file_get_contents( 'https://api.pandascore.co/videogames/1/series?token=' . env('PS_KEY') ) ),
+            'dota2'     => json_decode( file_get_contents( 'https://api.pandascore.co/videogames/4/series?token=' . env('PS_KEY') ) ),
+            'ow'        => json_decode( file_get_contents( 'https://api.pandascore.co/videogames/14/series?token=' . env('PS_KEY') ) )
+        ];
+
+        return $result;
+    }
+
+    public static function getMatches( $type, $category = '0' )
+    {
+        if( $type == 'tournament' )
+        {
+            $result = [
+                'upcoming' => json_decode( file_get_contents( 'https://api.pandascore.co/series/' . $category . '/matches/upcoming?token=' . env('PS_KEY') ) ),
+                'running'  => json_decode( file_get_contents( 'https://api.pandascore.co/series/' . $category . '/matches/running?token=' . env('PS_KEY') ) ),
+                'past'     => json_decode( file_get_contents( 'https://api.pandascore.co/series/' . $category . '/matches/past?token=' . env('PS_KEY') ) )
+            ];
+
+            return $result;
+        }
+
         if( $category == '0' )
         {
             $result = [

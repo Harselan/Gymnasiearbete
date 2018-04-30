@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/',             'DashboardController@index');
-Route::get('/{category}',   'DashboardController@index');
+Route::get('/',                                 'DashboardController@index');
+Route::get('/{category}',                       'DashboardController@index');
+Route::get('/tournaments/{tournament}/matches', 'DashboardController@getMatches');
 
-Route::post('/ajax/{category}/get', 'AjaxController@getData');
+Route::post('/ajax/{category}/get',             'AjaxController@getData');
