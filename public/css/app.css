@@ -21,12 +21,6 @@
 .noborder, .noborder th, .noborder td{
     border:0px !important;
 }
-.wrapper {
-    overflow: hidden;
-}
-.first {
-    float:left;
-}
-.second {
-    overflow: hidden;
+p {
+   font-size: 15px;
 }
